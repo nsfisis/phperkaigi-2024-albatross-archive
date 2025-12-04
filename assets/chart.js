@@ -24,7 +24,7 @@ document.addEventListener('DOMContentLoaded', async () => {
   const chartCanvas = document.getElementById('chart');
   const quizId = chartCanvas.dataset.quizId;
 
-  const apiUrl = `${process.env.ALBATROSS_BASE_PATH}/api/quizzes/${quizId}/chart`;
+  const apiUrl = `${process.env.ALBATROSS_BASE_PATH}/api/quizzes/${quizId}/chart.json`;
   const apiResult = await fetch(apiUrl).then(res => res.json());
   if (apiResult.error) {
     return;

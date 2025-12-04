@@ -1,4 +1,5 @@
 DOCKER_COMPOSE := docker compose
+ALBATROSS_BASE_PATH := /phperkaigi/2024/golf
 
 .PHONY: up
 up:
@@ -19,4 +20,4 @@ logs:
 .PHONY: build-assets
 build-assets:
 	cp -f assets/favicon.svg archive/assets/
-	# docker run --rm -v "$$(pwd)"/esbuild.mjs:/app/esbuild.mjs -v "$$(pwd)"/assets:/app/assets -v "$$(pwd)"/archive/assets:/app/archive/assets --env-file "$$(pwd)"/.env.local albatross-build-assets npm run build
+	ALBATROSS_BASE_PATH=$(ALBATROSS_BASE_PATH) npm run build
