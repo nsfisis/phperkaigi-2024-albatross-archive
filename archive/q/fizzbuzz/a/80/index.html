@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>問題 #1 - 回答 #80 | Albatross.PHP</title>
+    <link rel="stylesheet" href="../../../../assets/index.css">
+    <link rel="icon" type="image/svg+xml" href="../../../../assets/favicon.svg">
+    <script type="module" src="../../../../assets/index.js"></script>
+  </head>
+  <body>
+    <header class="container">
+      <nav class="navbar">
+        <a class="navbar-brand" href="../../../../index.html">Albatross.PHP</a>
+      </nav>
+    </header>
+    <main class="container mt-5">
+      <h1 class="mb-4">問題 #1 - 回答 #80</h1>
+        <nav>
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item"><a href="../../../../index.html">問題一覧</a></li>
+      <li class="breadcrumb-item"><a href="../../index.html">FizzBuzz</a></li>
+      <li class="breadcrumb-item"><a href="../index.html">回答一覧</a></li>
+      <li class="breadcrumb-item active">#80</li>
+    </ol>
+  </nav>
+
+  <h2>FizzBuzz</h2>
+  <p>
+    いわゆる「FizzBuzz」を実装してください。
+1から100までの数字について、その数が3の倍数なら「Fizz」、5の倍数なら「Buzz」、15の倍数なら「FizzBuzz」、それ以外ならその数そのものを出力してください。それぞれの出力は改行で区切ってください。
+  </p>
+  <h2>回答 #80</h2>
+  <p>
+    hibiki-cube が 2024-03-08 08:36:35 に投稿
+  </p>
+  <h2>コード</h2>
+  <p>
+    74 byte
+  </p>
+  <pre><code class="hljs language-php">for($i=0;$i++&lt;100;)echo($i%3&amp;&amp;$i%5?$i:($i%3?:&quot;Fizz&quot;).($i%5?:&quot;Buzz&quot;)).&quot;\n&quot;;</code></pre>
+  <h2>実行結果</h2>
+  <div class="js-phper-token">
+      </div>
+  <div class="mt-3">
+    ステータス: <span class="js-aggregated-execution-status" data-answer-id="186">失敗</span>
+      </div>
+  <div class="mt-3">
+          <h3>テストケース 1</h3>
+      <div>
+        ステータス: <span class="js-testcase-execution-status" data-testcase-execution-id="462">不正解</span>
+              </div>
+      <h4>標準出力</h4>
+      <pre><code class="js-testcase-execution-stdout hljs language-plaintext" data-testcase-execution-id="462">1
+2
+Fizz3
+4
+2Buzz
+Fizz1
+7
+8
+Fizz4
+1Buzz
+11
+Fizz2
+13
+14
+FizzBuzz
+16
+17
+Fizz3
+19
+2Buzz
+Fizz1
+22
+23
+Fizz4
+1Buzz
+26
+Fizz2
+28
+29
+FizzBuzz
+31
+32
+Fizz3
+34
+2Buzz
+Fizz1
+37
+38
+Fizz4
+1Buzz
+41
+Fizz2
+43
+44
+FizzBuzz
+46
+47
+Fizz3
+49
+2Buzz
+Fizz1
+52
+53
+Fizz4
+1Buzz
+56
+Fizz2
+58
+59
+FizzBuzz
+61
+62
+Fizz3
+64
+2Buzz
+Fizz1
+67
+68
+Fizz4
+1Buzz
+71
+Fizz2
+73
+74
+FizzBuzz
+76
+77
+Fizz3
+79
+2Buzz
+Fizz1
+82
+83
+Fizz4
+1Buzz
+86
+Fizz2
+88
+89
+FizzBuzz
+91
+92
+Fizz3
+94
+2Buzz
+Fizz1
+97
+98
+Fizz4
+1Buzz
+
+</code></pre>
+      <h4>標準エラー出力</h4>
+      <pre><code class="js-testcase-execution-stderr hljs language-plaintext" data-testcase-execution-id="462">
+</code></pre>
+      </div>
+  <script type="module" src="../../../../assets/loading.js"></script>
+    </main>
+    <footer class="container text-center mt-5 mb-4">
+      Albatross.PHP - PHPerKaigi 2024
+    </footer>
+  </body>
+</html>

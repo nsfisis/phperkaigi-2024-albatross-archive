@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>問題 #1 - 回答 #14 | Albatross.PHP</title>
+    <link rel="stylesheet" href="../../../../assets/index.css">
+    <link rel="icon" type="image/svg+xml" href="../../../../assets/favicon.svg">
+    <script type="module" src="../../../../assets/index.js"></script>
+  </head>
+  <body>
+    <header class="container">
+      <nav class="navbar">
+        <a class="navbar-brand" href="../../../../index.html">Albatross.PHP</a>
+      </nav>
+    </header>
+    <main class="container mt-5">
+      <h1 class="mb-4">問題 #1 - 回答 #14</h1>
+        <nav>
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item"><a href="../../../../index.html">問題一覧</a></li>
+      <li class="breadcrumb-item"><a href="../../index.html">FizzBuzz</a></li>
+      <li class="breadcrumb-item"><a href="../index.html">回答一覧</a></li>
+      <li class="breadcrumb-item active">#14</li>
+    </ol>
+  </nav>
+
+  <h2>FizzBuzz</h2>
+  <p>
+    いわゆる「FizzBuzz」を実装してください。
+1から100までの数字について、その数が3の倍数なら「Fizz」、5の倍数なら「Buzz」、15の倍数なら「FizzBuzz」、それ以外ならその数そのものを出力してください。それぞれの出力は改行で区切ってください。
+  </p>
+  <h2>回答 #14</h2>
+  <p>
+    Natsuki が 2024-03-07 15:06:36 に投稿
+  </p>
+  <h2>コード</h2>
+  <p>
+    143 byte
+  </p>
+  <pre><code class="hljs language-php">&lt;?php $n=0;do{$i=fn($b)=&gt;$n%$b==0;$n++;echo match(&quot;{$i(3)}-{$i(5)}&quot;){&quot;1-1&quot;=&gt;&quot;FizzBuzz&quot;,&quot;1-&quot;=&gt;&quot;Fizz&quot;,&quot;-1&quot;=&gt;&quot;Buzz&quot;,default=&gt;$n}.PHP_EOL;}while($n&lt;101);</code></pre>
+  <h2>実行結果</h2>
+  <div class="js-phper-token">
+      </div>
+  <div class="mt-3">
+    ステータス: <span class="js-aggregated-execution-status" data-answer-id="29">失敗</span>
+      </div>
+  <div class="mt-3">
+          <h3>テストケース 1</h3>
+      <div>
+        ステータス: <span class="js-testcase-execution-status" data-testcase-execution-id="69">不正解</span>
+              </div>
+      <h4>標準出力</h4>
+      <pre><code class="js-testcase-execution-stdout hljs language-plaintext" data-testcase-execution-id="69">FizzBuzz
+2
+3
+Fizz
+5
+Buzz
+Fizz
+8
+9
+Fizz
+Buzz
+12
+Fizz
+14
+15
+FizzBuzz
+17
+18
+Fizz
+20
+Buzz
+Fizz
+23
+24
+Fizz
+Buzz
+27
+Fizz
+29
+30
+FizzBuzz
+32
+33
+Fizz
+35
+Buzz
+Fizz
+38
+39
+Fizz
+Buzz
+42
+Fizz
+44
+45
+FizzBuzz
+47
+48
+Fizz
+50
+Buzz
+Fizz
+53
+54
+Fizz
+Buzz
+57
+Fizz
+59
+60
+FizzBuzz
+62
+63
+Fizz
+65
+Buzz
+Fizz
+68
+69
+Fizz
+Buzz
+72
+Fizz
+74
+75
+FizzBuzz
+77
+78
+Fizz
+80
+Buzz
+Fizz
+83
+84
+Fizz
+Buzz
+87
+Fizz
+89
+90
+FizzBuzz
+92
+93
+Fizz
+95
+Buzz
+Fizz
+98
+99
+Fizz
+Buzz
+
+</code></pre>
+      <h4>標準エラー出力</h4>
+      <pre><code class="js-testcase-execution-stderr hljs language-plaintext" data-testcase-execution-id="69">
+</code></pre>
+      </div>
+  <script type="module" src="../../../../assets/loading.js"></script>
+    </main>
+    <footer class="container text-center mt-5 mb-4">
+      Albatross.PHP - PHPerKaigi 2024
+    </footer>
+  </body>
+</html>

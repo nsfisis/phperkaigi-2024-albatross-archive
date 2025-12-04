@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>問題 #1 - 回答 #209 | Albatross.PHP</title>
+    <link rel="stylesheet" href="../../../../assets/index.css">
+    <link rel="icon" type="image/svg+xml" href="../../../../assets/favicon.svg">
+    <script type="module" src="../../../../assets/index.js"></script>
+  </head>
+  <body>
+    <header class="container">
+      <nav class="navbar">
+        <a class="navbar-brand" href="../../../../index.html">Albatross.PHP</a>
+      </nav>
+    </header>
+    <main class="container mt-5">
+      <h1 class="mb-4">問題 #1 - 回答 #209</h1>
+        <nav>
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item"><a href="../../../../index.html">問題一覧</a></li>
+      <li class="breadcrumb-item"><a href="../../index.html">FizzBuzz</a></li>
+      <li class="breadcrumb-item"><a href="../index.html">回答一覧</a></li>
+      <li class="breadcrumb-item active">#209</li>
+    </ol>
+  </nav>
+
+  <h2>FizzBuzz</h2>
+  <p>
+    いわゆる「FizzBuzz」を実装してください。
+1から100までの数字について、その数が3の倍数なら「Fizz」、5の倍数なら「Buzz」、15の倍数なら「FizzBuzz」、それ以外ならその数そのものを出力してください。それぞれの出力は改行で区切ってください。
+  </p>
+  <h2>回答 #209</h2>
+  <p>
+    k-kuwata が 2024-03-09 08:29:07 に投稿
+  </p>
+  <h2>コード</h2>
+  <p>
+    111 byte
+  </p>
+  <pre><code class="hljs language-php">&lt;?while($i++&lt;100)echo$i%3?!$$i=$i:Fizz,$i%5?$$i:Buzz,~ ;
+&lt;?for(;$i++&lt;100;)echo$i%3?!$$i=$i:Fizz,$i%5?$$i:Buzz,~ ;</code></pre>
+  <h2>実行結果</h2>
+  <div class="js-phper-token">
+      </div>
+  <div class="mt-3">
+    ステータス: <span class="js-aggregated-execution-status" data-answer-id="426">失敗</span>
+      </div>
+  <div class="mt-3">
+          <h3>テストケース 1</h3>
+      <div>
+        ステータス: <span class="js-testcase-execution-status" data-testcase-execution-id="1000">実行時エラー</span>
+              </div>
+      <h4>標準出力</h4>
+      <pre><code class="js-testcase-execution-stdout hljs language-plaintext" data-testcase-execution-id="1000">
+Parse error: syntax error, unexpected token &quot;;&quot; in php.wasm code on line 6
+
+</code></pre>
+      <h4>標準エラー出力</h4>
+      <pre><code class="js-testcase-execution-stderr hljs language-plaintext" data-testcase-execution-id="1000">
+</code></pre>
+      </div>
+  <script type="module" src="../../../../assets/loading.js"></script>
+    </main>
+    <footer class="container text-center mt-5 mb-4">
+      Albatross.PHP - PHPerKaigi 2024
+    </footer>
+  </body>
+</html>

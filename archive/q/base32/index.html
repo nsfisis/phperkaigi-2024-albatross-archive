@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>問題 #2 | Albatross.PHP</title>
+    <link rel="stylesheet" href="../../assets/index.css">
+    <link rel="icon" type="image/svg+xml" href="../../assets/favicon.svg">
+    <script type="module" src="../../assets/index.js"></script>
+  </head>
+  <body>
+    <header class="container">
+      <nav class="navbar">
+        <a class="navbar-brand" href="../../index.html">Albatross.PHP</a>
+      </nav>
+    </header>
+    <main class="container mt-5">
+      <h1 class="mb-4">問題 #2</h1>
+        <nav>
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item"><a href="../../index.html">問題一覧</a></li>
+      <li class="breadcrumb-item active">Base32</li>
+    </ol>
+  </nav>
+
+  <h2>Base32</h2>
+  <p>
+    RFC 4648 で定義された Base32 エンコーディングを実装してください。
+標準入力から与えられる各行に対し、Base32 エンコードをおこなった文字列を標準出力へ改行区切りで出力してください。
+なお、アルファベットの出力には大文字を用いてください。
+  </p>
+    <h3>実装例</h3>
+  <pre><code class="hljs language-php">const TABLE = [
+  &#039;A&#039;, &#039;B&#039;, &#039;C&#039;, &#039;D&#039;, &#039;E&#039;, &#039;F&#039;, &#039;G&#039;, &#039;H&#039;,
+  &#039;I&#039;, &#039;J&#039;, &#039;K&#039;, &#039;L&#039;, &#039;M&#039;, &#039;N&#039;, &#039;O&#039;, &#039;P&#039;,
+  &#039;Q&#039;, &#039;R&#039;, &#039;S&#039;, &#039;T&#039;, &#039;U&#039;, &#039;V&#039;, &#039;W&#039;, &#039;X&#039;,
+  &#039;Y&#039;, &#039;Z&#039;, &#039;2&#039;, &#039;3&#039;, &#039;4&#039;, &#039;5&#039;, &#039;6&#039;, &#039;7&#039;,
+];
+while ($line = fgets(STDIN)) {
+  $line = rtrim($line);
+  $bits = &#039;&#039;;
+  for ($i = 0; $i &lt; strlen($line); $i++) {
+    $bits .= str_pad(base_convert(strval(ord($line[$i])), 10, 2), 8, &#039;0&#039;, STR_PAD_LEFT);
+  }
+  $base32 = &#039;&#039;;
+  foreach (str_split($bits, 5) as $b) {
+    $base32 .= TABLE[base_convert(str_pad($b, 5, &#039;0&#039;), 2, 10)];
+  }
+  $base32 .= match (strlen($bits) % 40) {
+    8 =&gt; &#039;======&#039;,
+    16 =&gt; &#039;====&#039;,
+    24 =&gt; &#039;===&#039;,
+    32 =&gt; &#039;=&#039;,
+    default =&gt; &#039;&#039;,
+  };
+  echo $base32, PHP_EOL;
+}</code></pre>
+  <h2>ランキング</h2>
+      <table class="table table-striped table-bordered">
+      <thead>
+        <tr>
+          <th>ランク</th>
+          <th>ID</th>
+          <th>作者</th>
+          <th>サイズ</th>
+          <th>投稿日時</th>
+        </tr>
+      </thead>
+      <tbody>
+                  <tr>
+            <td>1</td>
+            <td>
+                              <a href="a/70/index.html">#70</a>
+                          </td>
+            <td>takaram</td>
+            <td>225 byte</td>
+            <td>2024-03-08 12:40:28</td>
+          </tr>
+                  <tr>
+            <td>2</td>
+            <td>
+                              <a href="a/62/index.html">#62</a>
+                          </td>
+            <td>nsfisis (staff)</td>
+            <td>235 byte</td>
+            <td>2024-03-08 05:25:41</td>
+          </tr>
+                  <tr>
+            <td>3</td>
+            <td>
+                              <a href="a/137/index.html">#137</a>
+                          </td>
+            <td>basi</td>
+            <td>250 byte</td>
+            <td>2024-03-09 04:27:40</td>
+          </tr>
+                  <tr>
+            <td>4</td>
+            <td>
+                              <a href="a/85/index.html">#85</a>
+                          </td>
+            <td>m3m0r7</td>
+            <td>262 byte</td>
+            <td>2024-03-08 14:57:05</td>
+          </tr>
+                  <tr>
+            <td>5</td>
+            <td>
+                              <a href="a/155/index.html">#155</a>
+                          </td>
+            <td>hanhan1978</td>
+            <td>275 byte</td>
+            <td>2024-03-09 15:19:33</td>
+          </tr>
+                  <tr>
+            <td>6</td>
+            <td>
+                              <a href="a/135/index.html">#135</a>
+                          </td>
+            <td>tadsan (staff)</td>
+            <td>276 byte</td>
+            <td>2024-03-09 04:24:05</td>
+          </tr>
+                  <tr>
+            <td>7</td>
+            <td>
+                              <a href="a/157/index.html">#157</a>
+                          </td>
+            <td>notchman</td>
+            <td>322 byte</td>
+            <td>2024-03-09 15:53:40</td>
+          </tr>
+                  <tr>
+            <td>8</td>
+            <td>
+                              <a href="a/52/index.html">#52</a>
+                          </td>
+            <td>yamamoto-hiroya</td>
+            <td>333 byte</td>
+            <td>2024-03-08 00:18:57</td>
+          </tr>
+                  <tr>
+            <td>9</td>
+            <td>
+                              <a href="a/127/index.html">#127</a>
+                          </td>
+            <td>azuki-penguin</td>
+            <td>355 byte</td>
+            <td>2024-03-09 03:21:55</td>
+          </tr>
+                  <tr>
+            <td>10</td>
+            <td>
+                              <a href="a/57/index.html">#57</a>
+                          </td>
+            <td>kunikiya</td>
+            <td>399 byte</td>
+            <td>2024-03-08 02:34:49</td>
+          </tr>
+                  <tr>
+            <td>11</td>
+            <td>
+                              <a href="a/42/index.html">#42</a>
+                          </td>
+            <td>rinchoku</td>
+            <td>447 byte</td>
+            <td>2024-03-07 23:59:24</td>
+          </tr>
+                  <tr>
+            <td>12</td>
+            <td>
+                              <a href="a/150/index.html">#150</a>
+                          </td>
+            <td>tsbkw</td>
+            <td>461 byte</td>
+            <td>2024-03-09 11:41:14</td>
+          </tr>
+                  <tr>
+            <td>13</td>
+            <td>
+                              <a href="a/2/index.html">#2</a>
+                          </td>
+            <td>blue-goheimochi (staff)</td>
+            <td>677 byte</td>
+            <td>2024-03-06 08:24:32</td>
+          </tr>
+                  <tr>
+            <td>14</td>
+            <td>
+                              <a href="a/3/index.html">#3</a>
+                          </td>
+            <td>muno92 (staff)</td>
+            <td>677 byte</td>
+            <td>2024-03-06 08:42:30</td>
+          </tr>
+                  <tr>
+            <td>15</td>
+            <td>
+                              <a href="a/140/index.html">#140</a>
+                          </td>
+            <td>masnmt</td>
+            <td>677 byte</td>
+            <td>2024-03-09 04:52:12</td>
+          </tr>
+                  <tr>
+            <td>16</td>
+            <td>
+                              <a href="a/141/index.html">#141</a>
+                          </td>
+            <td>k-kuwata</td>
+            <td>677 byte</td>
+            <td>2024-03-09 08:36:45</td>
+          </tr>
+                  <tr>
+            <td>17</td>
+            <td>
+                              <a href="a/151/index.html">#151</a>
+                          </td>
+            <td>ticknical</td>
+            <td>677 byte</td>
+            <td>2024-03-09 14:38:16</td>
+          </tr>
+              </tbody>
+    </table>
+    <div>
+      <canvas id="chart" data-quiz-id="2"></canvas>
+      <script type="module" src="../../assets/chart.js"></script>
+    </div>
+    <p>
+    <a href="a/index.html">すべての回答を見る</a>
+  </p>
+    </main>
+    <footer class="container text-center mt-5 mb-4">
+      Albatross.PHP - PHPerKaigi 2024
+    </footer>
+  </body>
+</html>

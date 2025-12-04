@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>問題 #1 - 回答 #259 | Albatross.PHP</title>
+    <link rel="stylesheet" href="../../../../assets/index.css">
+    <link rel="icon" type="image/svg+xml" href="../../../../assets/favicon.svg">
+    <script type="module" src="../../../../assets/index.js"></script>
+  </head>
+  <body>
+    <header class="container">
+      <nav class="navbar">
+        <a class="navbar-brand" href="../../../../index.html">Albatross.PHP</a>
+      </nav>
+    </header>
+    <main class="container mt-5">
+      <h1 class="mb-4">問題 #1 - 回答 #259</h1>
+        <nav>
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item"><a href="../../../../index.html">問題一覧</a></li>
+      <li class="breadcrumb-item"><a href="../../index.html">FizzBuzz</a></li>
+      <li class="breadcrumb-item"><a href="../index.html">回答一覧</a></li>
+      <li class="breadcrumb-item active">#259</li>
+    </ol>
+  </nav>
+
+  <h2>FizzBuzz</h2>
+  <p>
+    いわゆる「FizzBuzz」を実装してください。
+1から100までの数字について、その数が3の倍数なら「Fizz」、5の倍数なら「Buzz」、15の倍数なら「FizzBuzz」、それ以外ならその数そのものを出力してください。それぞれの出力は改行で区切ってください。
+  </p>
+  <h2>回答 #259</h2>
+  <p>
+    notchman が 2024-03-09 13:49:33 に投稿
+  </p>
+  <h2>コード</h2>
+  <p>
+    62 byte
+  </p>
+  <pre><code class="hljs language-php">$i=0;while($i++&lt;100)echo[&quot;Fizz&quot;][$i%3].[&quot;Buzz&quot;][$i%5]?:$i,&quot;
+&quot;;</code></pre>
+  <h2>実行結果</h2>
+  <div class="js-phper-token">
+      </div>
+  <div class="mt-3">
+    ステータス: <span class="js-aggregated-execution-status" data-answer-id="508">失敗</span>
+      </div>
+  <div class="mt-3">
+          <h3>テストケース 1</h3>
+      <div>
+        ステータス: <span class="js-testcase-execution-status" data-testcase-execution-id="1156">不正解</span>
+              </div>
+      <h4>標準出力</h4>
+      <pre><code class="js-testcase-execution-stdout hljs language-plaintext" data-testcase-execution-id="1156">
+Warning: Undefined array key 1 in php.wasm code on line 6
+
+Warning: Undefined array key 1 in php.wasm code on line 6
+1
+
+Warning: Undefined array key 2 in php.wasm code on line 6
+
+Warning: Undefined array key 2 in php.wasm code on line 6
+2
+
+Warning: Undefined array key 3 in php.wasm code on line 6
+Fizz
+
+Warning: Undefined array key 1 in php.wasm code on line 6
+
+Warning: Undefined array key 4 in php.wasm code on line 6
+4
+
+Warning: Undefined array key 2 in php.wasm code on line 6
+Buzz
+
+Warning: Undefined array key 1 in php.wasm code on line 6
+Fizz
+
+Warning: Undefined array key 1 in php.wasm code on line 6
+
+Warning: Undefined array key 2 in php.wasm code on line 6
+7
+
+Warning: Undefined array key 2 in php.wasm code on line 6
+
+Warning: Undefined array key 3 in php.wasm code on line 6
+8
+
+Warning: Undefined array key 4 in php.wasm code on line 6
+Fizz
+
+Warning: Undefined array key 1 in php.wasm code on line 6
+Buzz
+
+Warning: Undefined array key 2 in php.wasm code on line 6
+
+Warning: Undefined array key 1 in php.wasm code on line 6
+11
+
+Warning: Undefined array key 2 in php.wasm code on line 6
+Fizz
+
+Warning: Undefined array key 1 in php.wasm code on line 6
+
+Warning: Undefined array key 3 in php.wasm code on line 6
+13
+
+Warning: Undefined array key 2 in php.wasm code on line 6
+
+Warning: Undefined array key 4 in php.wasm code on line 6
+14
+FizzBuzz
+
+Warning: Undefined array key 1 in php.wasm code on line 6
+
+Warning: Undefined array key 1 in php.wasm code on line 6
+16
+
+Warning: Undefined array key 2 in php.wasm code on line 6
+
+Warning: Undefined array key 2 in php.wasm code on line 6
+17
+
+Warning: Undefined array key 3 in php.wasm code on line 6
+Fizz
+
+Warning: Undefined array key 1 in php.wasm code on line 6
+
+Warning: Undefined array key 4 in php.wasm code on line 6
+19
+
+Warning: Undefined array key 2 in php.wasm code on line 6
+Buzz
+
+Warning: Undefined array key 1 in php.wasm code on line 6
+Fizz
+
+Warning: Undefined array key 1 in php.wasm code on line 6
+
+Warning: Undefined array key 2 in php.wasm code on line 6
+22
+
+Warning: Undefined array key 2 in php.wasm code on line 6
+
+Warning: Undefined array key 3 in php.wasm code on line 6
+23
+
+Warning: Undefined array key 4 in php.wasm code on line 6
+Fizz
+
+Warning: Undefined array key 1 in php.wasm code on line 6
+Buzz
+
+Warning: Undefined array key 2 in php.wasm code on line 6
+
+Warning: Undefined array key 1 in php.wasm code on line 6
+26
+
+Warning: Undefined array key 2 in php.wasm code on line 6
+Fizz
+
+Warning: Undefined array key 1 in php.wasm code on line 6
+
+Warning: Undefined array key 3 in php.wasm code on line 6
+28
+
+Warning: Undefined array key 2 in php.wasm code on line 6
+
+Warning: Undefined array key 4 in php.wasm code on line 6
+29
+FizzBuzz
+
+Warning: Undefined array key 1 in php.wasm code on line 6
+
+Warning: Undefined array key 1 in php.wasm code on line 6
+31
+
+Warning: Undefined array key 2 in php.wasm code on line 6
+
+Warning: Undefined array key 2 in php.wasm code on line 6
+32
+
+Warning: Undefined array key 3 in php.wasm code on line 6
+Fizz
+
+Warning: Undefined array key 1 in php.wasm code on line 6
+
+Warning: Undefined array key 4 in php.wasm code on line 6
+34
+
+Warning: Undefined array key 2 in php.wasm code on line 6
+Buzz
+
+Warning: Undefined array key 1 in php.wasm code on line 6
+Fizz
+
+Warning: Undefined array key 1 in php.wasm code on line 6
+
+Warning: Undefined array key 2 in php.wasm code on line 6
+37
+
+Warning: Undefined array key 2 in php.wasm code on line 6
+
+Warning: Undefined array key 3 in php.wasm code on line 6
+38
+
+Warning: Undefined array key 4 in php.wasm code on line 6
+Fizz
+
+Warning: Undefined array key 1 in php.wasm code on line 6
+Buzz
+
+Warning: Undefined array key 2 in php.wasm code on line 6
+
+Warning: Undefined array key 1 in php.wasm code on line 6
+41
+
+Warning: Undefined array key 2 in php.wasm code on line 6
+Fizz
+
+Warning: Undefined array key 1 in php.wasm code on line 6
+
+Warning: Undefined array key 3 in php.wasm code on line 6
+43
+
+Warning: Undefined array key 2 in php.wasm code on line 6
+
+Warning: Undefined array key 4 in php.wasm code on line 6
+44
+FizzBuzz
+
+Warning: Undefined array key 1 in php.wasm code on line 6
+
+Warning: Undefined array key 1 in php.wasm code on line 6
+46
+
+Warning: Undefined array key 2 in php.wasm code on line 6
+
+Warning: Undefined array key 2 in php.wasm code on line 6
+47
+
+Warning: Undefined array key 3 in php.wasm code on line 6
+Fizz
+
+Warning: Undefined array key 1 in php.wasm code on line 6
+
+Warning: Undefined array key 4 in php.wasm code on line 6
+49
+
+Warning: Undefined array key 2 in php.wasm code on line 6
+Buzz
+
+Warning: Undefined array key 1 in php.wasm code on line 6
+Fizz
+
+Warning: Undefined array key 1 in php.wasm code on line 6
+
+Warning: Undefined array key 2 in php.wasm code on line 6
+52
+
+Warning: Undefined array key 2 in php.wasm code on line 6
+
+Warning: Undefined array key 3 in php.wasm code on line 6
+53
+
+Warning: Undefined array key 4 in php.wasm code on line 6
+Fizz
+
+Warning: Undefined array key 1 in php.wasm code on line 6
+Buzz
+
+Warning: Undefined array key 2 in php.wasm code on line 6
+
+Warning: Undefined array key 1 in php.wasm code on line 6
+56
+
+Warning: Undefined array key 2 in php.wasm code on line 6
+Fizz
+
+Warning: Undefined array key 1 in php.wasm code on line 6
+
+Warning: Undefined array key 3 in php.wasm code on line 6
+58
+
+Warning: Undefined array key 2 in php.wasm code on line 6
+
+Warning: Undefined array key 4 in php.wasm code on line 6
+59
+FizzBuzz
+
+Warning: Undefined array key 1 in php.wasm code on line 6
+
+Warning: Undefined array key 1 in php.wasm code on line 6
+61
+
+Warning: Undefined array key 2 in php.wasm code on line 6
+
+Warning: Undefined array key 2 in php.wasm code on line 6
+62
+
+Warning: Undefined array key 3 in php.wasm code on line 6
+Fizz
+
+Warning: Undefined array key 1 in php.wasm code on line 6
+
+Warning: Undefined array key 4 in php.wasm code on line 6
+64
+
+Warning: Undefined array key 2 in php.wasm code on line 6
+Buzz
+
+Warning: Undefined array key 1 in php.wasm code on line 6
+Fizz
+
+Warning: Undefined array key 1 in php.wasm code on line 6
+
+Warning: Undefined array key 2 in php.wasm code on line 6
+67
+
+Warning: Undefined array key 2 in php.wasm code on line 6
+
+Warning: Undefined array key 3 in php.wasm code on line 6
+68
+
+Warning: Undefined array key 4 in php.wasm code on line 6
+Fizz
+
+Warning: Undefined array key 1 in php.wasm code on line 6
+Buzz
+
+Warning: Undefined array key 2 in php.wasm code on line 6
+
+Warning: Undefined array key 1 in php.wasm code on line 6
+71
+
+Warning: Undefined array key 2 in php.wasm code on line 6
+Fizz
+
+Warning: Undefined array key 1 in php.wasm code on line 6
+
+Warning: Undefined array key 3 in php.wasm code on line 6
+73
+
+Warning: Undefined array key 2 in php.wasm code on line 6
+
+Warning: Undefined array key 4 in php.wasm code on line 6
+74
+FizzBuzz
+
+Warning: Undefined array key 1 in php.wasm code on line 6
+
+Warning: Undefined array key 1 in php.wasm code on line 6
+76
+
+Warning: Undefined array key 2 in php.wasm code on line 6
+
+Warning: Undefined array key 2 in php.wasm code on line 6
+77
+
+Warning: Undefined array key 3 in php.wasm code on line 6
+Fizz
+
+Warning: Undefined array key 1 in php.wasm code on line 6
+
+Warning: Undefined array key 4 in php.wasm code on line 6
+79
+
+Warning: Undefined array key 2 in php.wasm code on line 6
+Buzz
+
+Warning: Undefined array key 1 in php.wasm code on line 6
+Fizz
+
+Warning: Undefined array key 1 in php.wasm code on line 6
+
+Warning: Undefined array key 2 in php.wasm code on line 6
+82
+
+Warning: Undefined array key 2 in php.wasm code on line 6
+
+Warning: Undefined array key 3 in php.wasm code on line 6
+83
+
+Warning: Undefined array key 4 in php.wasm code on line 6
+Fizz
+
+Warning: Undefined array key 1 in php.wasm code on line 6
+Buzz
+
+Warning: Undefined array key 2 in php.wasm code on line 6
+
+Warning: Undefined array key 1 in php.wasm code on line 6
+86
+
+Warning: Undefined array key 2 in php.wasm code on line 6
+Fizz
+
+Warning: Undefined array key 1 in php.wasm code on line 6
+
+Warning: Undefined array key 3 in php.wasm code on line 6
+88
+
+Warning: Undefined array key 2 in php.wasm code on line 6
+
+Warning: Undefined array key 4 in php.wasm code on line 6
+89
+FizzBuzz
+
+Warning: Undefined array key 1 in php.wasm code on line 6
+
+Warning: Undefined array key 1 in php.wasm code on line 6
+91
+
+Warning: Undefined array key 2 in php.wasm code on line 6
+
+Warning: Undefined array key 2 in php.wasm code on line 6
+92
+
+Warning: Undefined array key 3 in php.wasm code on line 6
+Fizz
+
+Warning: Undefined array key 1 in php.wasm code on line 6
+
+Warning: Undefined array key 4 in php.wasm code on line 6
+94
+
+Warning: Undefined array key 2 in php.wasm code on line 6
+Buzz
+
+Warning: Undefined array key 1 in php.wasm code on line 6
+Fizz
+
+Warning: Undefined array key 1 in php.wasm code on line 6
+
+Warning: Undefined array key 2 in php.wasm code on line 6
+97
+
+Warning: Undefined array key 2 in php.wasm code on line 6
+
+Warning: Undefined array key 3 in php.wasm code on line 6
+98
+
+Warning: Undefined array key 4 in php.wasm code on line 6
+Fizz
+
+Warning: Undefined array key 1 in php.wasm code on line 6
+Buzz
+
+</code></pre>
+      <h4>標準エラー出力</h4>
+      <pre><code class="js-testcase-execution-stderr hljs language-plaintext" data-testcase-execution-id="1156">
+</code></pre>
+      </div>
+  <script type="module" src="../../../../assets/loading.js"></script>
+    </main>
+    <footer class="container text-center mt-5 mb-4">
+      Albatross.PHP - PHPerKaigi 2024
+    </footer>
+  </body>
+</html>

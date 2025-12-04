@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>問題 #3 - 回答 #93 | Albatross.PHP</title>
+    <link rel="stylesheet" href="../../../../assets/index.css">
+    <link rel="icon" type="image/svg+xml" href="../../../../assets/favicon.svg">
+    <script type="module" src="../../../../assets/index.js"></script>
+  </head>
+  <body>
+    <header class="container">
+      <nav class="navbar">
+        <a class="navbar-brand" href="../../../../index.html">Albatross.PHP</a>
+      </nav>
+    </header>
+    <main class="container mt-5">
+      <h1 class="mb-4">問題 #3 - 回答 #93</h1>
+        <nav>
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item"><a href="../../../../index.html">問題一覧</a></li>
+      <li class="breadcrumb-item"><a href="../../index.html">Brainf*ck</a></li>
+      <li class="breadcrumb-item"><a href="../index.html">回答一覧</a></li>
+      <li class="breadcrumb-item active">#93</li>
+    </ol>
+  </nav>
+
+  <h2>Brainf*ck</h2>
+  <p>
+    Brainf*ck を実装してください。標準入力から Brainf*ck のソースコードが渡されます。Brainf*ck の仕様のうち、入力命令である「,」は未実装で構いません。
+
+一部明確に挙動が定められていない部分については、以下の仕様とします。
+メモリの各セルは 8 bit の符号なし整数です。今回の入力でオーバーフローは発生しません。
+メモリのアドレスは非負整数です。今回の入力で負のアドレスへポインタを動かすことはありません。
+Brainf*ck に存在する命令以外の文字を受け取った場合は無視してください。
+今回の入力に不正なプログラムは含まれません。すなわち、「[」と「]」は必ず釣り合っています。
+  </p>
+  <h2>回答 #93</h2>
+  <p>
+    tsbkw が 2024-03-09 11:48:35 に投稿
+  </p>
+  <h2>コード</h2>
+  <p>
+    327 byte
+  </p>
+  <pre><code class="hljs language-php">$p=0;for($s=stream_get_contents(STDIN);$p&lt;strlen($s);)switch($s[$p++]){case&#039;&gt;&#039;:$p++;break;case&#039;&lt;&#039;:$p--;break;case&#039;+&#039;:$m[$p]++;break;case&#039;-&#039;:$m[$p]--;break;case&#039;.&#039;:echo chr($m[$p]);break;case&#039;[&#039;:if(!$m[$p])for($d=1;++$p;$d+=$s[$p]==&#039;[&#039;?-1:($s[$p]==&#039;]&#039;));break;case&#039;]&#039;:if($m[$p])for($d=-1;--$p;$d+=$s[$p]==&#039;]&#039;?-1:($s[$p]==&#039;[&#039;));}</code></pre>
+  <h2>実行結果</h2>
+  <div class="js-phper-token">
+      </div>
+  <div class="mt-3">
+    ステータス: <span class="js-aggregated-execution-status" data-answer-id="487">失敗</span>
+      </div>
+  <div class="mt-3">
+          <h3>テストケース 1</h3>
+      <div>
+        ステータス: <span class="js-testcase-execution-status" data-testcase-execution-id="1121">時間制限超過</span>
+              </div>
+      <h4>標準出力</h4>
+      <pre><code class="js-testcase-execution-stdout hljs language-plaintext" data-testcase-execution-id="1121"></code></pre>
+      <h4>標準エラー出力</h4>
+      <pre><code class="js-testcase-execution-stderr hljs language-plaintext" data-testcase-execution-id="1121">Time Limit Exceeded: 10000 msec</code></pre>
+          <h3>テストケース 2</h3>
+      <div>
+        ステータス: <span class="js-testcase-execution-status" data-testcase-execution-id="1122">不正解</span>
+              </div>
+      <h4>標準出力</h4>
+      <pre><code class="js-testcase-execution-stdout hljs language-plaintext" data-testcase-execution-id="1122">
+Warning: Undefined variable $m in php.wasm code on line 6
+
+Warning: Undefined array key 1 in php.wasm code on line 6
+
+Warning: Undefined array key 2 in php.wasm code on line 6
+
+Warning: Undefined array key 3 in php.wasm code on line 6
+
+Warning: Undefined array key 4 in php.wasm code on line 6
+
+Warning: Undefined array key 5 in php.wasm code on line 6
+
+Warning: Undefined array key 6 in php.wasm code on line 6
+
+Warning: Undefined array key 7 in php.wasm code on line 6
+
+Warning: Undefined array key 8 in php.wasm code on line 6
+
+Warning: Undefined array key 9 in php.wasm code on line 6
+
+Warning: Undefined array key 10 in php.wasm code on line 6
+
+Warning: Undefined array key 11 in php.wasm code on line 6
+
+Warning: Undefined array key 12 in php.wasm code on line 6
+
+Warning: Undefined array key 13 in php.wasm code on line 6
+
+Warning: Undefined array key 14 in php.wasm code on line 6
+
+Warning: Undefined array key 15 in php.wasm code on line 6
+
+Warning: Undefined array key 16 in php.wasm code on line 6
+
+Warning: Undefined array key 17 in php.wasm code on line 6
+
+Warning: Undefined array key 18 in php.wasm code on line 6
+
+Warning: Undefined array key 19 in php.wasm code on line 6
+
+Warning: Undefined array key 20 in php.wasm code on line 6
+
+Warning: Undefined array key 21 in php.wasm code on line 6
+
+Warning: Undefined array key 22 in php.wasm code on line 6
+
+Warning: Undefined array key 23 in php.wasm code on line 6
+
+Warning: Undefined array key 24 in php.wasm code on line 6
+
+Warning: Undefined array key 25 in php.wasm code on line 6
+
+Warning: Undefined array key 26 in php.wasm code on line 6
+
+Warning: Undefined array key 27 in php.wasm code on line 6
+
+Warning: Undefined array key 28 in php.wasm code on line 6
+
+Warning: Undefined array key 29 in php.wasm code on line 6
+
+Warning: Undefined array key 30 in php.wasm code on line 6
+
+Warning: Undefined array key 31 in php.wasm code on line 6
+
+Warning: Undefined array key 32 in php.wasm code on line 6
+
+Warning: Undefined array key 33 in php.wasm code on line 6
+
+Warning: Undefined array key 34 in php.wasm code on line 6
+
+Warning: Undefined array key 35 in php.wasm code on line 6
+
+Warning: Undefined array key 36 in php.wasm code on line 6
+
+Warning: Undefined array key 37 in php.wasm code on line 6
+
+Warning: Undefined array key 38 in php.wasm code on line 6
+
+Warning: Undefined array key 39 in php.wasm code on line 6
+
+Warning: Undefined array key 40 in php.wasm code on line 6
+
+Warning: Undefined array key 41 in php.wasm code on line 6
+
+Warning: Undefined array key 42 in php.wasm code on line 6
+
+Warning: Undefined array key 43 in php.wasm code on line 6
+
+Warning: Undefined array key 44 in php.wasm code on line 6
+
+Warning: Undefined array key 45 in php.wasm code on line 6
+
+Warning: Undefined array key 46 in php.wasm code on line 6
+
+Warning: Undefined array key 47 in php.wasm code on line 6
+
+Warning: Undefined array key 48 in php.wasm code on line 6
+
+Warning: Undefined array key 49 in php.wasm code on line 6
+
+Warning: Undefined array key 50 in php.wasm code on line 6
+
+Warning: Undefined array key 51 in php.wasm code on line 6
+
+Warning: Undefined array key 52 in php.wasm code on line 6
+
+Warning: Undefined array key 53 in php.wasm code on line 6
+
+Warning: Undefined array key 54 in php.wasm code on line 6
+
+Warning: Undefined array key 55 in php.wasm code on line 6
+
+Warning: Undefined array key 56 in php.wasm code on line 6
+
+Warning: Undefined array key 57 in php.wasm code on line 6
+
+Warning: Undefined array key 58 in php.wasm code on line 6
+
+Warning: Undefined array key 59 in php.wasm code on line 6
+
+Warning: Undefined array key 60 in php.wasm code on line 6
+
+Warning: Undefined array key 61 in php.wasm code on line 6
+
+Warning: Undefined array key 62 in php.wasm code on line 6
+
+Warning: Undefined array key 63 in php.wasm code on line 6
+
+Warning: Undefined array key 64 in php.wasm code on line 6
+
+Warning: Undefined array key 65 in php.wasm code on line 6
+
+Warning: Undefined array key 66 in php.wasm code on line 6
+
+Warning: Undefined array key 67 in php.wasm code on line 6
+
+Warning: Undefined array key 68 in php.wasm code on line 6
+
+Warning: Undefined array key 69 in php.wasm code on line 6
+
+Warning: Undefined array key 70 in php.wasm code on line 6
+
+Warning: Undefined array key 71 in php.wasm code on line 6
+
+Warning: Undefined array key 72 in php.wasm code on line 6
+
+Warning: Undefined array key 73 in php.wasm code on line 6
+
+Warning: Undefined array key 74 in php.wasm code on line 6
+
+Warning: Undefined array key 75 in php.wasm code on line 6
+
+Warning: Undefined array key 76 in php.wasm code on line 6
+
+Warning: Undefined array key 77 in php.wasm code on line 6
+
+Warning: Undefined array key 78 in php.wasm code on line 6
+
+Warning: Undefined array key 79 in php.wasm code on line 6
+
+Warning: Undefined array key 80 in php.wasm code on line 6
+
+Warning: Undefined array key 81 in php.wasm code on line 6
+
+Deprecated: chr(): Passing null to parameter #1 ($codepoint) of type int is deprecated in php.wasm code on line 6
+</code></pre>
+      <h4>標準エラー出力</h4>
+      <pre><code class="js-testcase-execution-stderr hljs language-plaintext" data-testcase-execution-id="1122">
+</code></pre>
+          <h3>テストケース 3</h3>
+      <div>
+        ステータス: <span class="js-testcase-execution-status" data-testcase-execution-id="1123">時間制限超過</span>
+              </div>
+      <h4>標準出力</h4>
+      <pre><code class="js-testcase-execution-stdout hljs language-plaintext" data-testcase-execution-id="1123"></code></pre>
+      <h4>標準エラー出力</h4>
+      <pre><code class="js-testcase-execution-stderr hljs language-plaintext" data-testcase-execution-id="1123">Time Limit Exceeded: 10000 msec</code></pre>
+      </div>
+  <script type="module" src="../../../../assets/loading.js"></script>
+    </main>
+    <footer class="container text-center mt-5 mb-4">
+      Albatross.PHP - PHPerKaigi 2024
+    </footer>
+  </body>
+</html>

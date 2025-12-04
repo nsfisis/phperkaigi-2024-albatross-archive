@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>問題 #2 - 回答 #5 | Albatross.PHP</title>
+    <link rel="stylesheet" href="../../../../assets/index.css">
+    <link rel="icon" type="image/svg+xml" href="../../../../assets/favicon.svg">
+    <script type="module" src="../../../../assets/index.js"></script>
+  </head>
+  <body>
+    <header class="container">
+      <nav class="navbar">
+        <a class="navbar-brand" href="../../../../index.html">Albatross.PHP</a>
+      </nav>
+    </header>
+    <main class="container mt-5">
+      <h1 class="mb-4">問題 #2 - 回答 #5</h1>
+        <nav>
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item"><a href="../../../../index.html">問題一覧</a></li>
+      <li class="breadcrumb-item"><a href="../../index.html">Base32</a></li>
+      <li class="breadcrumb-item"><a href="../index.html">回答一覧</a></li>
+      <li class="breadcrumb-item active">#5</li>
+    </ol>
+  </nav>
+
+  <h2>Base32</h2>
+  <p>
+    RFC 4648 で定義された Base32 エンコーディングを実装してください。
+標準入力から与えられる各行に対し、Base32 エンコードをおこなった文字列を標準出力へ改行区切りで出力してください。
+なお、アルファベットの出力には大文字を用いてください。
+  </p>
+  <h2>回答 #5</h2>
+  <p>
+    tadsan が 2024-03-06 21:25:10 に投稿
+  </p>
+  <h2>コード</h2>
+  <p>
+    321 byte
+  </p>
+  <pre><code class="hljs language-php">while($l=fgets(STDIN)){$l=rtrim($l);for($i=0;$i&lt;strlen($l);$i++)$t.=sprintf(&#039;%08d&#039;,base_convert(strval(ord($l[$i])),10,2));echo implode(array_map(fn($b)=&gt;[...range(&#039;A&#039;,&#039;Z&#039;),...range(&#039;2&#039;,&#039;7&#039;)][base_convert(str_pad($b, 5, &#039;0&#039;), 2, 10)],str_split($t, 5))),[8=&gt;&#039;======&#039;,16=&gt;&#039;====&#039;,24=&gt;&#039;===&#039;,32=&gt;&#039;=&#039;][strlen($t)%40]??&#039;&#039;,&quot;\n&quot;;}</code></pre>
+  <h2>実行結果</h2>
+  <div class="js-phper-token">
+      </div>
+  <div class="mt-3">
+    ステータス: <span class="js-aggregated-execution-status" data-answer-id="20">失敗</span>
+      </div>
+  <div class="mt-3">
+          <h3>テストケース 1</h3>
+      <div>
+        ステータス: <span class="js-testcase-execution-status" data-testcase-execution-id="38">不正解</span>
+              </div>
+      <h4>標準出力</h4>
+      <pre><code class="js-testcase-execution-stdout hljs language-plaintext" data-testcase-execution-id="38">
+Warning: Undefined variable $t in php.wasm code on line 6
+NBXWOZI=
+NBXWOZLQNF4W6===
+NBXWOZLQNF4W6ZTVM5QQ====
+
+</code></pre>
+      <h4>標準エラー出力</h4>
+      <pre><code class="js-testcase-execution-stderr hljs language-plaintext" data-testcase-execution-id="38">
+</code></pre>
+          <h3>テストケース 2</h3>
+      <div>
+        ステータス: <span class="js-testcase-execution-status" data-testcase-execution-id="39">不正解</span>
+              </div>
+      <h4>標準出力</h4>
+      <pre><code class="js-testcase-execution-stdout hljs language-plaintext" data-testcase-execution-id="39">
+Warning: Undefined variable $t in php.wasm code on line 6
+4OAYNY4BRPRYFCXDQGX6HAMS
+4OAYNY4BRPRYFCXDQGX6HAMS4OA2VY4BRTRYFCPDQGDOHAMX
+4OAYNY4BRPRYFCXDQGX6HAMS4OA2VY4BRTRYFCPDQGDOHAMX4OBI7Y4BTHRYFCPDQKBOHANB
+
+</code></pre>
+      <h4>標準エラー出力</h4>
+      <pre><code class="js-testcase-execution-stderr hljs language-plaintext" data-testcase-execution-id="39">
+</code></pre>
+          <h3>テストケース 3</h3>
+      <div>
+        ステータス: <span class="js-testcase-execution-status" data-testcase-execution-id="40">不正解</span>
+              </div>
+      <h4>標準出力</h4>
+      <pre><code class="js-testcase-execution-stdout hljs language-plaintext" data-testcase-execution-id="40">
+Warning: Undefined variable $t in php.wasm code on line 6
+GEZDGNBVGY3Q====
+GEZDGNBVGY3TCMQ=
+GEZDGNBVGY3TCMRRGIZTINJWG44DSMA=
+GEZDGNBVGY3TCMRRGIZTINJWG44DSMBRGIZTINJWG44A====
+GEZDGNBVGY3TCMRRGIZTINJWG44DSMBRGIZTINJWG44DCMRT
+GEZDGNBVGY3TCMRRGIZTINJWG44DSMBRGIZTINJWG44DCMRTGEZDGNBV
+GEZDGNBVGY3TCMRRGIZTINJWG44DSMBRGIZTINJWG44DCMRTGEZDGNBVGEZDGNBVGY3TQOI=
+GEZDGNBVGY3TCMRRGIZTINJWG44DSMBRGIZTINJWG44DCMRTGEZDGNBVGEZDGNBVGY3TQOJRGIZTI===
+GEZDGNBVGY3TCMRRGIZTINJWG44DSMBRGIZTINJWG44DCMRTGEZDGNBVGEZDGNBVGY3TQOJRGIZTIMI=
+GEZDGNBVGY3TCMRRGIZTINJWG44DSMBRGIZTINJWG44DCMRTGEZDGNBVGEZDGNBVGY3TQOJRGIZTIMJRGIZTINJW
+
+</code></pre>
+      <h4>標準エラー出力</h4>
+      <pre><code class="js-testcase-execution-stderr hljs language-plaintext" data-testcase-execution-id="40">
+</code></pre>
+          <h3>テストケース 4</h3>
+      <div>
+        ステータス: <span class="js-testcase-execution-status" data-testcase-execution-id="60">不正解</span>
+              </div>
+      <h4>標準出力</h4>
+      <pre><code class="js-testcase-execution-stdout hljs language-plaintext" data-testcase-execution-id="60">
+Warning: Undefined variable $t in php.wasm code on line 6
+MEQGEIDD
+MEQGEIDDEAQOHAMC4OAYIIHDQGDCBY4BRAQOHAMK
+
+</code></pre>
+      <h4>標準エラー出力</h4>
+      <pre><code class="js-testcase-execution-stderr hljs language-plaintext" data-testcase-execution-id="60">
+</code></pre>
+      </div>
+  <script type="module" src="../../../../assets/loading.js"></script>
+    </main>
+    <footer class="container text-center mt-5 mb-4">
+      Albatross.PHP - PHPerKaigi 2024
+    </footer>
+  </body>
+</html>

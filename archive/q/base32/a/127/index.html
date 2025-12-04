@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>問題 #2 - 回答 #127 | Albatross.PHP</title>
+    <link rel="stylesheet" href="../../../../assets/index.css">
+    <link rel="icon" type="image/svg+xml" href="../../../../assets/favicon.svg">
+    <script type="module" src="../../../../assets/index.js"></script>
+  </head>
+  <body>
+    <header class="container">
+      <nav class="navbar">
+        <a class="navbar-brand" href="../../../../index.html">Albatross.PHP</a>
+      </nav>
+    </header>
+    <main class="container mt-5">
+      <h1 class="mb-4">問題 #2 - 回答 #127</h1>
+        <nav>
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item"><a href="../../../../index.html">問題一覧</a></li>
+      <li class="breadcrumb-item"><a href="../../index.html">Base32</a></li>
+      <li class="breadcrumb-item"><a href="../index.html">回答一覧</a></li>
+      <li class="breadcrumb-item active">#127</li>
+    </ol>
+  </nav>
+
+  <h2>Base32</h2>
+  <p>
+    RFC 4648 で定義された Base32 エンコーディングを実装してください。
+標準入力から与えられる各行に対し、Base32 エンコードをおこなった文字列を標準出力へ改行区切りで出力してください。
+なお、アルファベットの出力には大文字を用いてください。
+  </p>
+  <h2>回答 #127</h2>
+  <p>
+    azuki-penguin が 2024-03-09 03:21:55 に投稿
+  </p>
+  <h2>コード</h2>
+  <p>
+    355 byte
+  </p>
+  <pre><code class="hljs language-php">while($l=fgets(STDIN)){$l=rtrim($l);$b=join(array_map(fn($x)=&gt;str_pad(base_convert(ord($x),10,2),8,0,0),str_split($l)));$e=join(array_map(fn($x)=&gt;$x&lt; 26?chr(ord(&#039;A&#039;)+$x):chr(ord(&#039;2&#039;)+$x-26),array_map(fn($y)=&gt;base_convert(str_pad($y,5,0),2,10),str_split($b,5))));$e.=match(strlen($b)%40){8=&gt;&#039;======&#039;,16=&gt;&#039;====&#039;,24=&gt;&#039;===&#039;,32=&gt;&#039;=&#039;,default=&gt;&#039;&#039;,};echo &quot;$e\n&quot;;}</code></pre>
+  <h2>実行結果</h2>
+  <div class="js-phper-token">
+      </div>
+  <div class="mt-3">
+    ステータス: <span class="js-aggregated-execution-status" data-answer-id="407">OK</span>
+      </div>
+  <div class="mt-3">
+          <h3>テストケース 1</h3>
+      <div>
+        ステータス: <span class="js-testcase-execution-status" data-testcase-execution-id="931">OK</span>
+              </div>
+      <h4>標準出力</h4>
+      <pre><code class="js-testcase-execution-stdout hljs language-plaintext" data-testcase-execution-id="931">NBXWOZI=
+OBUXS3Y=
+MZ2WOYI=
+
+</code></pre>
+      <h4>標準エラー出力</h4>
+      <pre><code class="js-testcase-execution-stderr hljs language-plaintext" data-testcase-execution-id="931">
+</code></pre>
+          <h3>テストケース 2</h3>
+      <div>
+        ステータス: <span class="js-testcase-execution-status" data-testcase-execution-id="932">OK</span>
+              </div>
+      <h4>標準出力</h4>
+      <pre><code class="js-testcase-execution-stdout hljs language-plaintext" data-testcase-execution-id="932">4OAYNY4BRPRYFCXDQGX6HAMS
+4OA2VY4BRTRYFCPDQGDOHAMX
+4OBI7Y4BTHRYFCPDQKBOHANB
+
+</code></pre>
+      <h4>標準エラー出力</h4>
+      <pre><code class="js-testcase-execution-stderr hljs language-plaintext" data-testcase-execution-id="932">
+</code></pre>
+          <h3>テストケース 3</h3>
+      <div>
+        ステータス: <span class="js-testcase-execution-status" data-testcase-execution-id="933">OK</span>
+              </div>
+      <h4>標準出力</h4>
+      <pre><code class="js-testcase-execution-stdout hljs language-plaintext" data-testcase-execution-id="933">GEZDGNBVGY3Q====
+GEZA====
+GEZDGNBVGY3TQOJQ
+GEZDGNBVGY3TQ===
+GEZDG===
+GEZDGNBV
+GEZDGNBVGY3TQOI=
+GEZDGNA=
+GE======
+GEZDGNBVGY======
+
+</code></pre>
+      <h4>標準エラー出力</h4>
+      <pre><code class="js-testcase-execution-stderr hljs language-plaintext" data-testcase-execution-id="933">
+</code></pre>
+          <h3>テストケース 4</h3>
+      <div>
+        ステータス: <span class="js-testcase-execution-status" data-testcase-execution-id="934">OK</span>
+              </div>
+      <h4>標準出力</h4>
+      <pre><code class="js-testcase-execution-stdout hljs language-plaintext" data-testcase-execution-id="934">MEQGEIDD
+EAQOHAMC4OAYIIHDQGDCBY4BRAQOHAMK
+
+</code></pre>
+      <h4>標準エラー出力</h4>
+      <pre><code class="js-testcase-execution-stderr hljs language-plaintext" data-testcase-execution-id="934">
+</code></pre>
+      </div>
+  <script type="module" src="../../../../assets/loading.js"></script>
+    </main>
+    <footer class="container text-center mt-5 mb-4">
+      Albatross.PHP - PHPerKaigi 2024
+    </footer>
+  </body>
+</html>

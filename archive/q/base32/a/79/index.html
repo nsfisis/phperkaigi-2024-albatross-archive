@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>問題 #2 - 回答 #79 | Albatross.PHP</title>
+    <link rel="stylesheet" href="../../../../assets/index.css">
+    <link rel="icon" type="image/svg+xml" href="../../../../assets/favicon.svg">
+    <script type="module" src="../../../../assets/index.js"></script>
+  </head>
+  <body>
+    <header class="container">
+      <nav class="navbar">
+        <a class="navbar-brand" href="../../../../index.html">Albatross.PHP</a>
+      </nav>
+    </header>
+    <main class="container mt-5">
+      <h1 class="mb-4">問題 #2 - 回答 #79</h1>
+        <nav>
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item"><a href="../../../../index.html">問題一覧</a></li>
+      <li class="breadcrumb-item"><a href="../../index.html">Base32</a></li>
+      <li class="breadcrumb-item"><a href="../index.html">回答一覧</a></li>
+      <li class="breadcrumb-item active">#79</li>
+    </ol>
+  </nav>
+
+  <h2>Base32</h2>
+  <p>
+    RFC 4648 で定義された Base32 エンコーディングを実装してください。
+標準入力から与えられる各行に対し、Base32 エンコードをおこなった文字列を標準出力へ改行区切りで出力してください。
+なお、アルファベットの出力には大文字を用いてください。
+  </p>
+  <h2>回答 #79</h2>
+  <p>
+    oogFranz が 2024-03-08 13:27:17 に投稿
+  </p>
+  <h2>コード</h2>
+  <p>
+    947 byte
+  </p>
+  <pre><code class="hljs language-php">&lt;?php
+
+/**
+ * RFC 4648 準拠の Base32 エンコーディング
+ *
+ * @param string $input エンコード対象の文字列
+ * @return string Base32 エンコードされた文字列
+ */
+function base32_encode_rfc4648($input)
+{
+    $base32Alphabet = &#039;ABCDEFGHIJKLMNOPQRSTUVWXYZ234567&#039;;
+    $output = &#039;&#039;;
+    $buffer = 0;
+    $bitsRemaining = 0;
+
+    foreach (str_split($input) as $byte) {
+        $buffer &lt;&lt;= 8;
+        $buffer |= ord($byte);
+        $bitsRemaining += 8;
+
+        while ($bitsRemaining &gt;= 5) {
+            $output .= $base32Alphabet[$buffer &gt;&gt; (32 - 5)];
+            $buffer &lt;&lt;= 5;
+            $bitsRemaining -= 5;
+        }
+    }
+
+    if ($bitsRemaining &gt; 0) {
+        $buffer &lt;&lt;= (32 - $bitsRemaining);
+        $output .= $base32Alphabet[$buffer];
+    }
+
+    return $output;
+}
+
+// 標準入力から各行を読み込み、Base32 エンコード
+while ($line = fgets(STDIN)) {
+    echo base32_encode_rfc4648(trim($line)) . PHP_EOL;
+}</code></pre>
+  <h2>実行結果</h2>
+  <div class="js-phper-token">
+      </div>
+  <div class="mt-3">
+    ステータス: <span class="js-aggregated-execution-status" data-answer-id="232">失敗</span>
+      </div>
+  <div class="mt-3">
+          <h3>テストケース 1</h3>
+      <div>
+        ステータス: <span class="js-testcase-execution-status" data-testcase-execution-id="552">不正解</span>
+              </div>
+      <h4>標準出力</h4>
+      <pre><code class="js-testcase-execution-stdout hljs language-plaintext" data-testcase-execution-id="552">AAAAQAA
+AAAAQAA
+AAAAQAA
+
+</code></pre>
+      <h4>標準エラー出力</h4>
+      <pre><code class="js-testcase-execution-stderr hljs language-plaintext" data-testcase-execution-id="552">
+</code></pre>
+          <h3>テストケース 2</h3>
+      <div>
+        ステータス: <span class="js-testcase-execution-status" data-testcase-execution-id="553">不正解</span>
+              </div>
+      <h4>標準出力</h4>
+      <pre><code class="js-testcase-execution-stdout hljs language-plaintext" data-testcase-execution-id="553">AAAQQAAOAQAQQAAIAQAQQAQI
+AAAQQAAOAQAAQAAIAQAQAAQI
+AAAQAAQOAQAQQAAIAQAAAAQI
+
+</code></pre>
+      <h4>標準エラー出力</h4>
+      <pre><code class="js-testcase-execution-stderr hljs language-plaintext" data-testcase-execution-id="553">
+</code></pre>
+          <h3>テストケース 3</h3>
+      <div>
+        ステータス: <span class="js-testcase-execution-status" data-testcase-execution-id="554">不正解</span>
+              </div>
+      <h4>標準出力</h4>
+      <pre><code class="js-testcase-execution-stdout hljs language-plaintext" data-testcase-execution-id="554">AAAQAAQDAQAA
+AAAA
+AAAQAAQDAQAAQAAD
+AAAQAAQDAQAAA
+AAAQA
+AAAQAAQD
+AAAQAAQDAQAAQAA
+AAAQAAA
+AA
+AAAQAAQDAA
+
+</code></pre>
+      <h4>標準エラー出力</h4>
+      <pre><code class="js-testcase-execution-stderr hljs language-plaintext" data-testcase-execution-id="554">
+</code></pre>
+          <h3>テストケース 4</h3>
+      <div>
+        ステータス: <span class="js-testcase-execution-status" data-testcase-execution-id="555">不正解</span>
+              </div>
+      <h4>標準出力</h4>
+      <pre><code class="js-testcase-execution-stdout hljs language-plaintext" data-testcase-execution-id="555">AAAQAAAC
+AAAQQAAOAQAAAAQIAAAAQAQIAAAQA
+
+</code></pre>
+      <h4>標準エラー出力</h4>
+      <pre><code class="js-testcase-execution-stderr hljs language-plaintext" data-testcase-execution-id="555">
+</code></pre>
+      </div>
+  <script type="module" src="../../../../assets/loading.js"></script>
+    </main>
+    <footer class="container text-center mt-5 mb-4">
+      Albatross.PHP - PHPerKaigi 2024
+    </footer>
+  </body>
+</html>

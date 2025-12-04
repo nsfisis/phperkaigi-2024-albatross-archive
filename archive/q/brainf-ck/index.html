@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>問題 #3 | Albatross.PHP</title>
+    <link rel="stylesheet" href="../../assets/index.css">
+    <link rel="icon" type="image/svg+xml" href="../../assets/favicon.svg">
+    <script type="module" src="../../assets/index.js"></script>
+  </head>
+  <body>
+    <header class="container">
+      <nav class="navbar">
+        <a class="navbar-brand" href="../../index.html">Albatross.PHP</a>
+      </nav>
+    </header>
+    <main class="container mt-5">
+      <h1 class="mb-4">問題 #3</h1>
+        <nav>
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item"><a href="../../index.html">問題一覧</a></li>
+      <li class="breadcrumb-item active">Brainf*ck</li>
+    </ol>
+  </nav>
+
+  <h2>Brainf*ck</h2>
+  <p>
+    Brainf*ck を実装してください。標準入力から Brainf*ck のソースコードが渡されます。Brainf*ck の仕様のうち、入力命令である「,」は未実装で構いません。
+
+一部明確に挙動が定められていない部分については、以下の仕様とします。
+メモリの各セルは 8 bit の符号なし整数です。今回の入力でオーバーフローは発生しません。
+メモリのアドレスは非負整数です。今回の入力で負のアドレスへポインタを動かすことはありません。
+Brainf*ck に存在する命令以外の文字を受け取った場合は無視してください。
+今回の入力に不正なプログラムは含まれません。すなわち、「[」と「]」は必ず釣り合っています。
+  </p>
+    <h3>実装例</h3>
+  <pre><code class="hljs language-php">$source = stream_get_contents(STDIN);
+$pc = 0;
+$memory = [];
+$ptr = 0;
+
+while ($pc &lt; strlen($source)) {
+  switch ($source[$pc]) {
+  case &#039;&gt;&#039;:
+    $ptr++;
+    break;
+  case &#039;&lt;&#039;:
+    $ptr--;
+    break;
+  case &#039;+&#039;:
+    if (!isset($memory[$ptr])) {
+      $memory[$ptr] = 0;
+    }
+    $memory[$ptr]++;
+    break;
+  case &#039;-&#039;:
+    if (!isset($memory[$ptr])) {
+      $memory[$ptr] = 0;
+    }
+    $memory[$ptr]--;
+    break;
+  case &#039;.&#039;:
+    echo chr($memory[$ptr]);
+    break;
+  case &#039;[&#039;:
+    if (!isset($memory[$ptr]) || $memory[$ptr] === 0) {
+      $depth = 1;
+      while ($depth &gt; 0) {
+        $pc++;
+        if ($source[$pc] === &#039;[&#039;) {
+          $depth++;
+        } elseif ($source[$pc] === &#039;]&#039;) {
+          $depth--;
+        }
+      }
+    }
+    break;
+  case &#039;]&#039;:
+    if (isset($memory[$ptr]) &amp;&amp; $memory[$ptr] !== 0) {
+      $depth = 1;
+      while ($depth &gt; 0) {
+        $pc--;
+        if ($source[$pc] === &#039;]&#039;) {
+          $depth++;
+        } elseif ($source[$pc] === &#039;[&#039;) {
+          $depth--;
+        }
+      }
+    }
+    break;
+  }
+  $pc++;
+}</code></pre>
+  <h2>ランキング</h2>
+      <table class="table table-striped table-bordered">
+      <thead>
+        <tr>
+          <th>ランク</th>
+          <th>ID</th>
+          <th>作者</th>
+          <th>サイズ</th>
+          <th>投稿日時</th>
+        </tr>
+      </thead>
+      <tbody>
+                  <tr>
+            <td>1</td>
+            <td>
+                              <a href="a/101/index.html">#101</a>
+                          </td>
+            <td>takaram</td>
+            <td>263 byte</td>
+            <td>2024-03-09 14:33:37</td>
+          </tr>
+                  <tr>
+            <td>2</td>
+            <td>
+                              <a href="a/107/index.html">#107</a>
+                          </td>
+            <td>m3m0r7</td>
+            <td>273 byte</td>
+            <td>2024-03-09 14:50:06</td>
+          </tr>
+                  <tr>
+            <td>3</td>
+            <td>
+                              <a href="a/7/index.html">#7</a>
+                          </td>
+            <td>nsfisis (staff)</td>
+            <td>341 byte</td>
+            <td>2024-03-07 16:02:44</td>
+          </tr>
+                  <tr>
+            <td>4</td>
+            <td>
+                              <a href="a/38/index.html">#38</a>
+                          </td>
+            <td>tadsan (staff)</td>
+            <td>343 byte</td>
+            <td>2024-03-08 05:43:06</td>
+          </tr>
+                  <tr>
+            <td>5</td>
+            <td>
+                              <a href="a/109/index.html">#109</a>
+                          </td>
+            <td>hanhan1978</td>
+            <td>392 byte</td>
+            <td>2024-03-09 15:33:46</td>
+          </tr>
+                  <tr>
+            <td>6</td>
+            <td>
+                              <a href="a/17/index.html">#17</a>
+                          </td>
+            <td>yamamoto-hiroya</td>
+            <td>415 byte</td>
+            <td>2024-03-08 02:05:50</td>
+          </tr>
+                  <tr>
+            <td>7</td>
+            <td>
+                              <a href="a/42/index.html">#42</a>
+                          </td>
+            <td>rinchoku</td>
+            <td>481 byte</td>
+            <td>2024-03-08 07:55:27</td>
+          </tr>
+                  <tr>
+            <td>8</td>
+            <td>
+                              <a href="a/23/index.html">#23</a>
+                          </td>
+            <td>kunikiya</td>
+            <td>495 byte</td>
+            <td>2024-03-08 02:48:15</td>
+          </tr>
+                  <tr>
+            <td>9</td>
+            <td>
+                              <a href="a/2/index.html">#2</a>
+                          </td>
+            <td>blue-goheimochi (staff)</td>
+            <td>1043 byte</td>
+            <td>2024-03-06 08:26:28</td>
+          </tr>
+                  <tr>
+            <td>10</td>
+            <td>
+                              <a href="a/3/index.html">#3</a>
+                          </td>
+            <td>muno92 (staff)</td>
+            <td>1043 byte</td>
+            <td>2024-03-06 08:42:52</td>
+          </tr>
+                  <tr>
+            <td>11</td>
+            <td>
+                              <a href="a/62/index.html">#62</a>
+                          </td>
+            <td>okashoi</td>
+            <td>1043 byte</td>
+            <td>2024-03-08 16:45:23</td>
+          </tr>
+                  <tr>
+            <td>12</td>
+            <td>
+                              <a href="a/77/index.html">#77</a>
+                          </td>
+            <td>masnmt</td>
+            <td>1043 byte</td>
+            <td>2024-03-09 04:52:52</td>
+          </tr>
+              </tbody>
+    </table>
+    <div>
+      <canvas id="chart" data-quiz-id="3"></canvas>
+      <script type="module" src="../../assets/chart.js"></script>
+    </div>
+    <p>
+    <a href="a/index.html">すべての回答を見る</a>
+  </p>
+    </main>
+    <footer class="container text-center mt-5 mb-4">
+      Albatross.PHP - PHPerKaigi 2024
+    </footer>
+  </body>
+</html>

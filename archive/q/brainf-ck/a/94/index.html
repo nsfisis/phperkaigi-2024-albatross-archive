@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>問題 #3 - 回答 #94 | Albatross.PHP</title>
+    <link rel="stylesheet" href="../../../../assets/index.css">
+    <link rel="icon" type="image/svg+xml" href="../../../../assets/favicon.svg">
+    <script type="module" src="../../../../assets/index.js"></script>
+  </head>
+  <body>
+    <header class="container">
+      <nav class="navbar">
+        <a class="navbar-brand" href="../../../../index.html">Albatross.PHP</a>
+      </nav>
+    </header>
+    <main class="container mt-5">
+      <h1 class="mb-4">問題 #3 - 回答 #94</h1>
+        <nav>
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item"><a href="../../../../index.html">問題一覧</a></li>
+      <li class="breadcrumb-item"><a href="../../index.html">Brainf*ck</a></li>
+      <li class="breadcrumb-item"><a href="../index.html">回答一覧</a></li>
+      <li class="breadcrumb-item active">#94</li>
+    </ol>
+  </nav>
+
+  <h2>Brainf*ck</h2>
+  <p>
+    Brainf*ck を実装してください。標準入力から Brainf*ck のソースコードが渡されます。Brainf*ck の仕様のうち、入力命令である「,」は未実装で構いません。
+
+一部明確に挙動が定められていない部分については、以下の仕様とします。
+メモリの各セルは 8 bit の符号なし整数です。今回の入力でオーバーフローは発生しません。
+メモリのアドレスは非負整数です。今回の入力で負のアドレスへポインタを動かすことはありません。
+Brainf*ck に存在する命令以外の文字を受け取った場合は無視してください。
+今回の入力に不正なプログラムは含まれません。すなわち、「[」と「]」は必ず釣り合っています。
+  </p>
+  <h2>回答 #94</h2>
+  <p>
+    tsbkw が 2024-03-09 11:52:47 に投稿
+  </p>
+  <h2>コード</h2>
+  <p>
+    361 byte
+  </p>
+  <pre><code class="hljs language-php">($t=fgets(STDIN))&amp;&amp;$m=[]&amp;&amp;$p=0&amp;&amp;array_map(fn($c)=&gt;$c===&#039;&gt;&#039;?$p++:$c===&#039;&lt;&#039;?$p--:$c===&#039;+&#039;?($m[$p]??0)++:$c===&#039;-&#039;?($m[$p]??0)--:$c===&#039;.&#039;?print chr($m[$p]):$c===&#039;[&#039;&amp;&amp;(!$m[$p]&amp;&amp;$d=1)&amp;&amp;array_map(fn($c)=&gt;$d+=($c==&#039;]&#039;)-($c==&#039;[&#039;),str_split($t))||$c===&#039;]&#039;&amp;&amp;$m[$p]&amp;&amp;($d=1)&amp;&amp;array_map(fn($c)=&gt;$d-=($c==&#039;]&#039;)-($c==&#039;[&#039;),array_reverse(str_split(substr($t,0,strpos($t,&#039;]&#039;)+1))));</code></pre>
+  <h2>実行結果</h2>
+  <div class="js-phper-token">
+      </div>
+  <div class="mt-3">
+    ステータス: <span class="js-aggregated-execution-status" data-answer-id="491">失敗</span>
+      </div>
+  <div class="mt-3">
+          <h3>テストケース 1</h3>
+      <div>
+        ステータス: <span class="js-testcase-execution-status" data-testcase-execution-id="1127">実行時エラー</span>
+              </div>
+      <h4>標準出力</h4>
+      <pre><code class="js-testcase-execution-stdout hljs language-plaintext" data-testcase-execution-id="1127">
+Parse error: syntax error, unexpected token &quot;++&quot; in php.wasm code on line 6
+
+</code></pre>
+      <h4>標準エラー出力</h4>
+      <pre><code class="js-testcase-execution-stderr hljs language-plaintext" data-testcase-execution-id="1127">
+</code></pre>
+          <h3>テストケース 2</h3>
+      <div>
+        ステータス: <span class="js-testcase-execution-status" data-testcase-execution-id="1128">実行時エラー</span>
+              </div>
+      <h4>標準出力</h4>
+      <pre><code class="js-testcase-execution-stdout hljs language-plaintext" data-testcase-execution-id="1128">
+Parse error: syntax error, unexpected token &quot;++&quot; in php.wasm code on line 6
+
+</code></pre>
+      <h4>標準エラー出力</h4>
+      <pre><code class="js-testcase-execution-stderr hljs language-plaintext" data-testcase-execution-id="1128">
+</code></pre>
+          <h3>テストケース 3</h3>
+      <div>
+        ステータス: <span class="js-testcase-execution-status" data-testcase-execution-id="1129">実行時エラー</span>
+              </div>
+      <h4>標準出力</h4>
+      <pre><code class="js-testcase-execution-stdout hljs language-plaintext" data-testcase-execution-id="1129">
+Parse error: syntax error, unexpected token &quot;++&quot; in php.wasm code on line 6
+
+</code></pre>
+      <h4>標準エラー出力</h4>
+      <pre><code class="js-testcase-execution-stderr hljs language-plaintext" data-testcase-execution-id="1129">
+</code></pre>
+      </div>
+  <script type="module" src="../../../../assets/loading.js"></script>
+    </main>
+    <footer class="container text-center mt-5 mb-4">
+      Albatross.PHP - PHPerKaigi 2024
+    </footer>
+  </body>
+</html>

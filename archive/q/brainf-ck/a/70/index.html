@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>問題 #3 - 回答 #70 | Albatross.PHP</title>
+    <link rel="stylesheet" href="../../../../assets/index.css">
+    <link rel="icon" type="image/svg+xml" href="../../../../assets/favicon.svg">
+    <script type="module" src="../../../../assets/index.js"></script>
+  </head>
+  <body>
+    <header class="container">
+      <nav class="navbar">
+        <a class="navbar-brand" href="../../../../index.html">Albatross.PHP</a>
+      </nav>
+    </header>
+    <main class="container mt-5">
+      <h1 class="mb-4">問題 #3 - 回答 #70</h1>
+        <nav>
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item"><a href="../../../../index.html">問題一覧</a></li>
+      <li class="breadcrumb-item"><a href="../../index.html">Brainf*ck</a></li>
+      <li class="breadcrumb-item"><a href="../index.html">回答一覧</a></li>
+      <li class="breadcrumb-item active">#70</li>
+    </ol>
+  </nav>
+
+  <h2>Brainf*ck</h2>
+  <p>
+    Brainf*ck を実装してください。標準入力から Brainf*ck のソースコードが渡されます。Brainf*ck の仕様のうち、入力命令である「,」は未実装で構いません。
+
+一部明確に挙動が定められていない部分については、以下の仕様とします。
+メモリの各セルは 8 bit の符号なし整数です。今回の入力でオーバーフローは発生しません。
+メモリのアドレスは非負整数です。今回の入力で負のアドレスへポインタを動かすことはありません。
+Brainf*ck に存在する命令以外の文字を受け取った場合は無視してください。
+今回の入力に不正なプログラムは含まれません。すなわち、「[」と「]」は必ず釣り合っています。
+  </p>
+  <h2>回答 #70</h2>
+  <p>
+    takaram が 2024-03-08 21:06:49 に投稿
+  </p>
+  <h2>コード</h2>
+  <p>
+    280 byte
+  </p>
+  <pre><code class="hljs language-php">$s=stream_get_contents(STDIN);$p=-1;function l($s,&amp;$p,$r){for($d=1;$d+=[&quot;[&quot;=&gt;$r,&quot;]&quot;=&gt;-$r][$s[$p+=$r]]??0;);}for($m=[$t=0];$s[++$p]??0;$d=&amp;$m[$t]){$d??=0;match($s[$p]){&quot;&gt;&quot;=&gt;$t++,&quot;&lt;&quot;=&gt;$t--,&quot;+&quot;=&gt;$d++,&quot;-&quot;=&gt;$d--,&quot;.&quot;=&gt;print chr($d),&quot;[&quot;=&gt;$d||l($s,$p,1),&quot;]&quot;=&gt;$d&amp;&amp;l($s,$p,-1),default=&gt;0};}</code></pre>
+  <h2>実行結果</h2>
+  <div class="js-phper-token">
+      </div>
+  <div class="mt-3">
+    ステータス: <span class="js-aggregated-execution-status" data-answer-id="342">失敗</span>
+      </div>
+  <div class="mt-3">
+          <h3>テストケース 1</h3>
+      <div>
+        ステータス: <span class="js-testcase-execution-status" data-testcase-execution-id="759">不正解</span>
+              </div>
+      <h4>標準出力</h4>
+      <pre><code class="js-testcase-execution-stdout hljs language-plaintext" data-testcase-execution-id="759">?X__bLbe_W	
+</code></pre>
+      <h4>標準エラー出力</h4>
+      <pre><code class="js-testcase-execution-stderr hljs language-plaintext" data-testcase-execution-id="759">
+</code></pre>
+          <h3>テストケース 2</h3>
+      <div>
+        ステータス: <span class="js-testcase-execution-status" data-testcase-execution-id="760">不正解</span>
+              </div>
+      <h4>標準出力</h4>
+      <pre><code class="js-testcase-execution-stdout hljs language-plaintext" data-testcase-execution-id="760">OHPerKaigi 2024
+</code></pre>
+      <h4>標準エラー出力</h4>
+      <pre><code class="js-testcase-execution-stderr hljs language-plaintext" data-testcase-execution-id="760">
+</code></pre>
+          <h3>テストケース 3</h3>
+      <div>
+        ステータス: <span class="js-testcase-execution-status" data-testcase-execution-id="761">不正解</span>
+              </div>
+      <h4>標準出力</h4>
+      <pre><code class="js-testcase-execution-stdout hljs language-plaintext" data-testcase-execution-id="761">�u��v��u��v��v��v�Ν��u�
+</code></pre>
+      <h4>標準エラー出力</h4>
+      <pre><code class="js-testcase-execution-stderr hljs language-plaintext" data-testcase-execution-id="761">
+</code></pre>
+      </div>
+  <script type="module" src="../../../../assets/loading.js"></script>
+    </main>
+    <footer class="container text-center mt-5 mb-4">
+      Albatross.PHP - PHPerKaigi 2024
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>問題 #2 - 回答 #148 | Albatross.PHP</title>
+    <link rel="stylesheet" href="../../../../assets/index.css">
+    <link rel="icon" type="image/svg+xml" href="../../../../assets/favicon.svg">
+    <script type="module" src="../../../../assets/index.js"></script>
+  </head>
+  <body>
+    <header class="container">
+      <nav class="navbar">
+        <a class="navbar-brand" href="../../../../index.html">Albatross.PHP</a>
+      </nav>
+    </header>
+    <main class="container mt-5">
+      <h1 class="mb-4">問題 #2 - 回答 #148</h1>
+        <nav>
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item"><a href="../../../../index.html">問題一覧</a></li>
+      <li class="breadcrumb-item"><a href="../../index.html">Base32</a></li>
+      <li class="breadcrumb-item"><a href="../index.html">回答一覧</a></li>
+      <li class="breadcrumb-item active">#148</li>
+    </ol>
+  </nav>
+
+  <h2>Base32</h2>
+  <p>
+    RFC 4648 で定義された Base32 エンコーディングを実装してください。
+標準入力から与えられる各行に対し、Base32 エンコードをおこなった文字列を標準出力へ改行区切りで出力してください。
+なお、アルファベットの出力には大文字を用いてください。
+  </p>
+  <h2>回答 #148</h2>
+  <p>
+    tsbkw が 2024-03-09 11:36:39 に投稿
+  </p>
+  <h2>コード</h2>
+  <p>
+    463 byte
+  </p>
+  <pre><code class="hljs language-php">const TABLE=[&#039;A&#039;,&#039;B&#039;,&#039;C&#039;,&#039;D&#039;,&#039;E&#039;,&#039;F&#039;,&#039;G&#039;,&#039;H&#039;,&#039;I&#039;,&#039;J&#039;,&#039;K&#039;,&#039;L&#039;,&#039;M&#039;,&#039;N&#039;,&#039;O&#039;,&#039;P&#039;,&#039;Q&#039;,&#039;R&#039;,&#039;S&#039;,&#039;T&#039;,&#039;U&#039;,&#039;V&#039;,&#039;W&#039;,&#039;X&#039;,&#039;Y&#039;,&#039;Z&#039;,&#039;2&#039;,&#039;3&#039;,&#039;4&#039;,&#039;5&#039;,&#039;6&#039;,&#039;7&#039;];while($l=fgets(STDIN)){$l=trim($l);$b=&#039;&#039;;for($i=0;$i&lt;strlen($l);$i++){$b.=str_pad(base_convert(strval(ord($l[$i])),10,2),8,&#039;0&#039;,STR_PAD_LEFT);}foreach(str_split($b,5)as$n){$a.=TABLE[base_convert(str_pad($n,5,&#039;0&#039;),2,10)];}$a.=match(strlen($b)%40){8=&gt;&#039;======&#039;,16=&gt;&#039;====&#039;,24=&gt;&#039;===&#039;,32=&gt;&#039;=&#039;,default=&gt;&#039;&#039;};echo$a.PHP_EOL;$a=&#039;&#039;;}</code></pre>
+  <h2>実行結果</h2>
+  <div class="js-phper-token">
+      </div>
+  <div class="mt-3">
+    ステータス: <span class="js-aggregated-execution-status" data-answer-id="470">失敗</span>
+      </div>
+  <div class="mt-3">
+          <h3>テストケース 1</h3>
+      <div>
+        ステータス: <span class="js-testcase-execution-status" data-testcase-execution-id="1089">不正解</span>
+              </div>
+      <h4>標準出力</h4>
+      <pre><code class="js-testcase-execution-stdout hljs language-plaintext" data-testcase-execution-id="1089">
+Warning: Undefined variable $a in php.wasm code on line 6
+NBXWOZI=
+OBUXS3Y=
+MZ2WOYI=
+
+</code></pre>
+      <h4>標準エラー出力</h4>
+      <pre><code class="js-testcase-execution-stderr hljs language-plaintext" data-testcase-execution-id="1089">
+</code></pre>
+          <h3>テストケース 2</h3>
+      <div>
+        ステータス: <span class="js-testcase-execution-status" data-testcase-execution-id="1090">不正解</span>
+              </div>
+      <h4>標準出力</h4>
+      <pre><code class="js-testcase-execution-stdout hljs language-plaintext" data-testcase-execution-id="1090">
+Warning: Undefined variable $a in php.wasm code on line 6
+4OAYNY4BRPRYFCXDQGX6HAMS
+4OA2VY4BRTRYFCPDQGDOHAMX
+4OBI7Y4BTHRYFCPDQKBOHANB
+
+</code></pre>
+      <h4>標準エラー出力</h4>
+      <pre><code class="js-testcase-execution-stderr hljs language-plaintext" data-testcase-execution-id="1090">
+</code></pre>
+          <h3>テストケース 3</h3>
+      <div>
+        ステータス: <span class="js-testcase-execution-status" data-testcase-execution-id="1091">不正解</span>
+              </div>
+      <h4>標準出力</h4>
+      <pre><code class="js-testcase-execution-stdout hljs language-plaintext" data-testcase-execution-id="1091">
+Warning: Undefined variable $a in php.wasm code on line 6
+GEZDGNBVGY3Q====
+GEZA====
+GEZDGNBVGY3TQOJQ
+GEZDGNBVGY3TQ===
+GEZDG===
+GEZDGNBV
+GEZDGNBVGY3TQOI=
+GEZDGNA=
+GE======
+GEZDGNBVGY======
+
+</code></pre>
+      <h4>標準エラー出力</h4>
+      <pre><code class="js-testcase-execution-stderr hljs language-plaintext" data-testcase-execution-id="1091">
+</code></pre>
+          <h3>テストケース 4</h3>
+      <div>
+        ステータス: <span class="js-testcase-execution-status" data-testcase-execution-id="1092">不正解</span>
+              </div>
+      <h4>標準出力</h4>
+      <pre><code class="js-testcase-execution-stdout hljs language-plaintext" data-testcase-execution-id="1092">
+Warning: Undefined variable $a in php.wasm code on line 6
+MEQGEIDD
+4OAYFY4BQQQOHAMGEDRYDCBA4OAYU===
+
+</code></pre>
+      <h4>標準エラー出力</h4>
+      <pre><code class="js-testcase-execution-stderr hljs language-plaintext" data-testcase-execution-id="1092">
+</code></pre>
+      </div>
+  <script type="module" src="../../../../assets/loading.js"></script>
+    </main>
+    <footer class="container text-center mt-5 mb-4">
+      Albatross.PHP - PHPerKaigi 2024
+    </footer>
+  </body>
+</html>
